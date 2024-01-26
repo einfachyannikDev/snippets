@@ -1,2 +1,3 @@
-# snippets
-My Snippst for me and you if you want
+# My Snippets
+These are my curent snippets for Java Minecraft Plugins:
+  - ItemBuilder
