@@ -1,11 +1,11 @@
-package de.einfachyannik.snippets
+package de.voxcraft.skywarssystem.utils;
 
+import lombok.Getter;
 import org.bukkit.Location;
 import org.bukkit.configuration.InvalidConfigurationException;
 import org.bukkit.configuration.file.FileConfiguration;
 import org.bukkit.configuration.file.YamlConfiguration;
 import org.bukkit.inventory.ItemStack;
-import org.bukkit.util.NumberConversions;
 
 import java.io.File;
 import java.io.IOException;
@@ -13,8 +13,9 @@ import java.util.List;
 
 public class Config {
 
+    @Getter
     private FileConfiguration fileConfiguration;
-  
+    @Getter
     private File file;
 
     public Config(String name , File path){
@@ -73,6 +74,14 @@ public class Config {
         return fileConfiguration.getString(path);
     }
 
+    public List<String> getStringList(String path){
+        return fileConfiguration.getStringList(path);
+    }
+
+    public List<?> getList(String path){
+        return fileConfiguration.getList(path);
+    }
+
     public boolean getBoolen(String path){
         return fileConfiguration.getBoolean(path);
     }
@@ -96,5 +105,5 @@ public class Config {
     public Location getLocation(String path){
         return fileConfiguration.getLocation(path);
     }
-    
+
 }
